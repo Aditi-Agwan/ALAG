@@ -1,0 +1,26 @@
+$(function() {
+
+    $.fn.raty.defaults.path = 'images/rating/';
+
+    
+
+    // Half Star
+    $('#half-star').raty({
+        half: true,
+    });
+
+    
+
+    // Icon Range
+    $('#icon-range').raty({
+        iconRange: [
+            { range: 1, on: 'wi wi-day-rain-wind font-16', off: 'wi wi-day-cloudy font-16' },
+            { range: 2, on: 'wi wi-day-sleet font-16', off: 'wi wi-day-sleet-storm font-16' },
+            { range: 3, on: 'wi wi-day-snow font-16', off: 'wi wi-day-storm-showers font-16' },
+            { range: 4, on: 'wi wi-night-alt-snow font-16', off: 'wi wi-night-alt-thunderstorm font-16' },
+            { range: 5, on: 'wi wi-night-snow-thunderstorm font-16', off: 'wi wi-night-snow-wind font-16' }
+        ],
+        starType: 'i'
+    });
+
+});
