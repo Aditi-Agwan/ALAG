@@ -24,7 +24,8 @@ def sentiment(blog):
         list_pos = positive_words.readlines()
         for i in list_pos:
             final_list_pos.append(i.strip())
-        sentence = blog.split()
+        sentence = blog.lower()    
+        sentence = sentence.split()
         for i in  final_list_pos:
             for words in sentence:
                 if i in words:
@@ -36,6 +37,7 @@ def sentiment(blog):
         list_neg = negative_words.readlines()
         for i in list_neg:
              final_list_neg.append(i.strip())
+        sentence = blog.lower()       
         sentence = blog.split()
         for i in  final_list_neg:
             for words in sentence:
@@ -155,11 +157,19 @@ def admin():
 @app.route('/micro-blogging')
 def blog():
     if 'loggedin' in session:
-             # User is loggedin show them the page
-              return render_template('micro blogging.html', username=session['username'],email=session['id'])
+            # User is loggedin show them the page
+            cur = mysql.connection.cursor()
+            cur.execute("SELECT * FROM BLOG")
+            data=cur.fetchall()
+            return render_template('micro blogging.html',value=data, username=session['username'],email=session['id'])
     else:          
       return redirect(url_for('login'))
-
+@app.route('/calendar')
+def calendar():
+    if 'loggedin' in session:
+        return render_template('academic calendar.html', username=session['username'],email=session['id'])
+    else:          
+      return redirect(url_for('login'))
 @app.route('/books')
 def book():
     if 'loggedin' in session:
@@ -186,10 +196,19 @@ def add_post():
     post_data=censor(post_data)
     #Insert post details in database
     cursor = mysql.connection.cursor()
-    cursor.execute("INSERT INTO BLOG(BLOG_TEXT,POSTED_BY,POSTED_ON,SENTIMENT) VALUES(%s,%s,%s,%s) ",(post_data,posted_by,posted_on,post_sentiment))
+    cursor.execute("INSERT INTO BLOG(BLOG_TEXT,POSTED_BY,POSTED_ON,SENTIMENT,POST_TYPE) VALUES(%s,%s,%s,%s,%s) ",(post_data,posted_by,posted_on,post_sentiment,post_type))
     mysql.connection.commit()
     cursor.close()
     return redirect(url_for('student'))
+
+@app.route('/show-posts',methods=['POST','GET'])
+def show_posts():
+    postDetails = request.form
+    post_type = postDetails['post_type']
+    cur = mysql.connection.cursor()
+    cur.execute("SELECT * FROM BLOG WHERE POST_TYPE=%s",(post_type))
+    data=cur.fetchall()
+    return render_template('micro blogging.html',value=data, username=session['username'],email=session['id'])
     
 if __name__ == '__main__': 
     app.run(debug=true)

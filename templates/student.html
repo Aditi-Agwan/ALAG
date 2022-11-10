@@ -79,14 +79,57 @@
                                     </div>
                                 </li>
                                 <li role="separator" class="divider"></li>
-                                <li><a href="#"><i class="material-icons">account_circle</i> My Profile</a></li>
+                                <li><a href="#modal12" class="modal-trigger"><i class="material-icons">account_circle</i> My Profile</a></li>
                                 <li role="separator" class="divider"></li>
-                                <li><a href="#"><i class="material-icons">settings</i> Account Setting</a></li>
+                                <li><a href="#modal11" class="modal-trigger"><i class="material-icons">settings</i> Account Setting</a></li>
                                 <li role="separator" class="divider"></li>
                                 <li><a href="/logout"><i class="material-icons">power_settings_new</i> Logout</a></li>
                             </ul>
                         </li>
                     </ul>
+                    <div id="modal11" class="modal" style="background-color: #e883ff; width: 400px;">
+                        <div class="modal-content">
+                            <div class="card">
+                                <div class="card-content">
+                                    <form class="" method="post">
+                                        <div class="row">
+                                            <div class="input-field col s12">
+                                                <input id="password" type="password" class="validate" required>
+                                                <label for="password">Enter your current password</label>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="input-field col s12">
+                                                <input id="password" type="password" class="validate" required>
+                                                <label for="password">Enter your new password</label>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <button class="btn waves-effect waves-light red right" type="submit"
+                                                name="action" style="margin-top: 10px;">Submit</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="modal12" class="modal" style="background-color: #e883ff; width: 400px;">
+                        <div class="modal-content">
+                            <div class="card">
+                                <div class="card-content center">
+                                    <img src="/static/images/users/profile.png" alt="profile"
+                                        style="height: 200px; width: 200px;">
+                                    <div onclick="importData()" class="btn btn-floating btn-large"
+                                        style="margin: -170px 0px -125px -50px">
+                                        <i class="material-icons">edit</i>
+                                    </div>
+                                    <div class="row" style="margin-top: -30px;">
+                                        <input id="profileName" type="text" value="{{username}}">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <!-- ============================================================== -->
                     <!-- Right topbar icon scss in header.scss -->
                     <!-- ============================================================== -->
@@ -139,7 +182,7 @@
                                     </div>
                                     <div class="col l4 m20 s6">
                                         <div class="card danger-gradient card-hover">
-                                            <a href="/academic-calender">
+                                            <a href="/calendar">
                                             <div class="card-content">
                                                 <div class="d-flex no-block align-items-center">
                                                     <img src="/static/images/academic calendar.jpeg" alt="Image" style="width: 350px; height:250px;">   
@@ -174,7 +217,8 @@
             <!-- ============================================================== -->
             <!-- Container fluid scss in scafholding.scss -->
             <!-- ============================================================== -->
-            <footer class="center-align m-b-30">All Rights Reserved by GCOEN. Designed and Developed by Alefiyah Sanawadwala.</footer>
+            <footer class="center-align m-b-30">All Rights Reserved by ALAG. Designed and Developed by Alefiyah
+                Sanawadwala. Vidhi Gupta. Aditi Agwan. Riddhi Hedaoo.</footer>
         </div>
         <!-- ============================================================== -->
         <!-- Page wrapper scss in scafholding.scss -->

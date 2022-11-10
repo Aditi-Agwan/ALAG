@@ -233,14 +233,17 @@
                     <div class="col l6 m20 s6">
                         <div class="card">
                             <div class="card-content">
-                                <label>Choose the category of Post</label>
-                                <select class="input-field" style="width: 100px;">
-                                    <option value="0" disabled selected>--Select your option--</option>
-                                    <option value="1">Entertainment</option>
-                                    <option value="2">Education</option>
-                                    <option value="3">Career Guidance</option>
-                                    <option value="4">Work experience</option>
-                                </select>
+                                <form action="/show-posts" method="post">
+                                 <label>Choose the category of Post</label>
+                                 <select class="input-field" name="post_type" style="width: 100px;">
+                                     <option value="0" disabled selected>--Select your option--</option>
+                                     <option value="1">Entertainment</option>
+                                     <option value="2">Education</option>
+                                     <option value="3">Career Guidance</option>
+                                     <option value="4">Work experience</option>
+                                 </select>
+                                 <input type="submit" >
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -258,67 +261,42 @@
                                         <div class="background_layer"></div>
                                         <div class="layer_content">
                                             <div class="testimonial_owlCarousel owl-carousel">
-                                                <div class="testimonials">
-                                                    <div class="testimonial_content">
-                                                        <div class="testimonial_caption">
-                                                            <h6>Robert Clarkson</h6>
-                                                            <span>CEO, Axura</span>
+                                                
+                                                    {% for row in value %}
+                                                    <div class="testimonials">
+                                                        <div class="testimonial_content">
+                                                            <div class="testimonial_caption">
+                                                                <h6>{{row[1]}}</h6>
+                                                                <span>{{row[2]}}</span>
+                                                            </div>
+                                                            <p>{{row[0]}}</p>
+    
+                                                            <i class="far fa-heart js-heart heart"></i>
                                                         </div>
-                                                        <p>The team at Tectxon industry is very talented, dedicated,
-                                                            well organized and knowledgeable. I was most satisfied with
-                                                            the quality of the workmanship. They did excellent work.</p>
-
-                                                        <!--<i class="fas fa-heart pulse"></i> -->
-                                                        <i class="far fa-heart js-heart heart"></i>
-                                                    </div>
-                                                    <div class="images_box">
-                                                        <div class="testimonial_img">
-                                                            <img class="img-center"
-                                                                src="/static/images/akki.jpg"
-                                                                alt="images not found">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="testimonials">
-                                                    <div class="testimonial_content">
-                                                        <div class="testimonial_caption">
-                                                            <h6>Robert Clarkson</h6>
-                                                            <span>CEO, Axura</span>
-                                                        </div>
-                                                        <p>The team at Tectxon industry is very talented, dedicated,
-                                                            well organized and knowledgeable. I was most satisfied with
-                                                            the quality of the workmanship. They did excellent work.</p>
-
-                                                        <i class="far fa-heart js-heart heart"></i>
-                                                    </div>
-                                                    <div class="images_box">
-                                                        <div class="testimonial_img">
-                                                            <img class="img-center"
-                                                                src="/static/images/Tiger.jpg"
-                                                                alt="images not found">
+                                                        <div class="images_box">
+                                                            <div class="testimonial_img">
+                                                                
+                                                               {% if row[3] == "positive"  %}
+                                                                 
+                                                                 <img class="img-center"
+                                                                    src="/static/images/positive.jpeg"
+                                                                    alt="images not found">
+                                                                {% elif row[3] == "negative" %}
+                                                                 
+                                                                 <img class="img-center"
+                                                                   src="/static/images/negative.jpeg"
+                                                                   alt="images not found">
+                                                                {%elif row[3] == "neutral" %} 
+                                                                    
+                                                                  <img class="img-center"
+                                                                    src="/static/images/neutral.jpg"
+                                                                    alt="images not found">
+                                                                {%endif%}    
+                                                            </div>
                                                         </div>
                                                     </div>
-                                                </div>
-                                                <div class="testimonials">
-                                                    <div class="testimonial_content">
-                                                        <div class="testimonial_caption">
-                                                            <h6>Robert Clarkson</h6>
-                                                            <span>CEO, Axura</span>
-                                                        </div>
-                                                        <p>The team at Tectxon industry is very talented, dedicated,
-                                                            well organized and knowledgeable. I was most satisfied with
-                                                            the quality of the workmanship. They did excellent work.</p>
-
-                                                        <i class="far fa-heart js-heart heart"></i>
-                                                    </div>
-                                                    <div class="images_box">
-                                                        <div class="testimonial_img">
-                                                            <img class="img-center"
-                                                                src="/static/images/akki.jpg"
-                                                                alt="images not found">
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                                    {% endfor %}
+                                                    
                                             </div>
                                         </div>
                                     </div>
@@ -332,8 +310,8 @@
                 <!-- Carousel wrapper -->
 
             </div>
-            <footer class="center-align m-b-30">All Rights Reserved by GCOEN. Designed and Developed by Alefiyah
-                Sanawadwala.</footer>
+            <footer class="center-align m-b-30">All Rights Reserved by ALAG. Designed and Developed by Alefiyah
+                Sanawadwala. Vidhi Gupta. Aditi Agwan. Riddhi Hedaoo.</footer>
         </div>
         <!-- ============================================================== -->
         <!-- Page wrapper scss in scafholding.scss -->
