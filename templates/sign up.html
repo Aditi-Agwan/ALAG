@@ -20,6 +20,10 @@
 </head>
 
 <body>
+    <!--Alert Box-->
+    {% for message in get_flashed_messages() %}
+        alert({{ message }})
+    {% endfor %}
     <div class="main-wrapper">
         <!-- ============================================================== -->
         <!-- Preloader - style you can find in spinners.css -->
@@ -45,54 +49,91 @@
                     </div>
                     <!-- Form -->
                     <div class="row">
-                        <form class="col s12" action="index.html">
-                            <!-- email -->
+                        <form class="col s12" action="" method="POST">
+                            <!-- NAME -->
                             <div class="row">
                                 <div class="input-field col s12">
-                                    <input id="name" type="text" class="validate" required>
-                                    <label for="name">Name</label>
+                                    <input name="username" type="text" class="validate" required>
+                                    <label for="username">Name</label>
                                 </div>
                             </div>
                             <!-- email -->
                             <div class="row">
                                 <div class="input-field col s12">
-                                    <input id="email" type="email" class="validate" required>
+                                    <input name="email" type="email" class="validate" required>
                                     <label for="email">Email</label>
                                 </div>
                             </div>
+                            <!-- gender -->
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <label for="gender">Gender</label>
+                                </div>
+                                <div class="input-field col s12">    
+                                    <select class="validate" name="gender" style="display:block;" required>
+                                        <option value="0" disabled selected>--Select your option--</option>
+                                        <option value="Male">Male</option>
+                                        <option value="Female">Female</option>
+                                        
+                                    </select>
+                                </div>
+                            </div>    
+                              
+                            <!-- COLLEGE NAME -->
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <input name="college" type="text" class="validate" required>
+                                    <label for="college">College</label>
+                                </div>
+                            </div>
+                            <!-- BRANCH -->
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <input name="branch" type="text" class="validate" required>
+                                    <label for="branch">Branch</label>
+                                </div>
+                            </div>
+                            <!-- YEAR OF STUDY -->
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <label for="yos">Year of Study</label>
+                                </div>    
+                                <div class="input-field col s12">
+                                    <select class="validate" name="yos" style="display: block;" required>
+                                        <option value="0" disabled selected>--Select your option--</option>
+                                        <option value="1">1st Year</option>
+                                        <option value="2">2nd Year</option>
+                                        <option value="3">3rd Year</option>
+                                        <option value="4">4th Year</option>
+                                    </select>
+                                </div>
+                            </div>
+                             
                             <!-- pwd -->
                             <div class="row">
                                 <div class="input-field col s12">
-                                    <input id="password" type="password" class="validate" required>
+                                    <input name="password" type="password" class="validate" required>
                                     <label for="password">Password</label>
                                 </div>
                             </div>
                             <!-- pwd -->
                             <div class="row">
                                 <div class="input-field col s12">
-                                    <input id="cpassword" type="password" class="validate" required>
+                                    <input name="cpassword" type="password" class="validate" required>
                                     <label for="cpassword">Confirm Password</label>
                                 </div>
                             </div>
-                            <!-- terms & conditions -->
-                            <div class="row m-t-5">
-                                <div class="col s7">
-                                    <label>
-                                        <input type="checkbox" />
-                                        <span>Agree to all Terms</span>
-                                    </label>
-                                </div>
-                            </div>
+                           
                             <!-- sign up -->
                             <div class="row m-t-15">
                                 <div class="col s12">
-                                    <a class="btn btn-large w100 red accent-4" href="student.html" type="submit">Sign up</a>
+                                    <a class="btn btn-large w100 red accent-4"><input type="submit" value="Sign up"></a>
                                 </div>
                             </div>
                         </form>
                     </div>
                     <div class="center-align m-t-20 db">
-                        Already have an account? <a href="index.html">Login</a>
+                        Already have an account? <a href="/login">Login</a>
                     </div>
                 </div>
             </div>

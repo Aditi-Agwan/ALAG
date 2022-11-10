@@ -45,18 +45,18 @@
                     </div>
                     <!-- Form -->
                     <div class="row">
-                        <form class="col s12" action="index.html">
+                        <form class="col s12" action="/login-validate" method="POST">
                             <!-- email -->
                             <div class="row">
                                 <div class="input-field col s12">
-                                    <input id="email" type="email" class="validate" required>
+                                    <input name="email" type="email" class="validate" required>
                                     <label for="email">Email</label>
                                 </div>
                             </div>
                             <!-- pwd -->
                             <div class="row">
                                 <div class="input-field col s12">
-                                    <input id="password" type="password" class="validate" required>
+                                    <input name="password" type="password" class="validate" required>
                                     <label for="password">Password</label>
                                 </div>
                             </div>
@@ -73,7 +73,7 @@
                             <!-- pwd -->
                             <div class="row m-t-40">
                                 <div class="col s12">
-                                    <a class="btn btn-large w100 blue accent-4" href="/student" type="submit">Login</a>
+                                    <a class="btn btn-large w100 blue accent-4" ><input type="submit" value="Login"></a>
                                 </div>
                             </div>
                         </form>

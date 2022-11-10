@@ -5,31 +5,16 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" sizes="16x16" href="images/logo.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/images/logo.png">
     <title>Academic Life Assistance and Guidance</title>
     <!-- chartist CSS -->
     <link href="/static/js/chartist/dist/chartist.min.css" rel="stylesheet">
     <link href="/static/js/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.css" rel="stylesheet">
     <link href="/static/css/style.css" rel="stylesheet">
     <!-- This page CSS -->
-
-    <!-- Carousel wrapper -->
-   <!-- <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">-->
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <!------ Include the above in your HEAD tag ---------->
-
-    <!-- Google font -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web:400,400i,600,600i,700,700i,900">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,600i,700,700i,800,800i">
-    <!-- carousel -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css">
-
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
-        integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
- 
+    <link href="/static/js/raty-js/lib/jquery.raty.css" rel="stylesheet">
+  
+    
 </head>
 
 <body>
@@ -94,7 +79,7 @@
                                         </div>
                                         <div class="u-text">
                                             <h4>{{username}}</h4>
-                                            <p>{{email}}</p>
+                                            <p>s{{email}}</p>
                                             <a class="waves-effect waves-light btn-small red white-text">View
                                                 Profile</a>
                                         </div>
@@ -107,7 +92,7 @@
                                 <li><a href="#modal11" class="modal-trigger"><i class="material-icons">settings</i>
                                         Account Settings</a></li>
                                 <li role="separator" class="divider"></li>
-                                <li><a href="/logout"><i class="material-icons">power_settings_new</i> Logout</a>
+                                <li><a href="/login"><i class="material-icons">power_settings_new</i> Logout</a>
                                 </li>
                             </ul>
                         </li>
@@ -149,7 +134,7 @@
                                         <i class="material-icons">edit</i>
                                     </div>
                                     <div class="row" style="margin-top: -30px;">
-                                        <input id="profileName" type="text" value="{{username}}">
+                                        <input id="profileName" type="text" value="Steve Harvey">
                                     </div>
                                 </div>
                             </div>
@@ -180,156 +165,130 @@
             <!-- Container fluid scss in scafholding.scss -->
             <!-- ============================================================== -->
             <div class="container-fluid">
+                
                 <!-- ============================================================== -->
-                <!-- Add post -->
-                <!-- ============================================================== -->
-                <a class="waves-effect waves-light"></a>
-                <div class="fixed-action-btn" style="bottom: 90px; right: 20px;">
-                    <a id="tap-target" class="btn btn-floating btn-large danger-gradient modal-trigger pulse"
-                        href="#modal3"><i class="material-icons">add</i></a>
-                </div>
-                <div id="modal3" class="modal bottom-sheet" style="background-color: #e883ff;">
-                    <div class="modal-content">
-                        <h5 class="header" style="color: white;">Type your post here</h5>
-                        <div class="row">
-                            <form method="post" action="/addpost">
-                                <textarea id="mymce" name="area"></textarea>
-                                <!-- <a style="background-color: #550158;"
-                                    class="btn waves-effect waves-light right m-t-10 modal-trigger" type="submit"
-                                    name="action" href="#modal1">
-                                    Post
-                                </a> -->
-                                <div class="card">
-                                    <div class="card-content">
-                                        <label>Choose the category of Post</label>
-                                        <select class="input-field" name="post_type" required>
-                                            <option value="0" disabled selected>--Select your option--</option>
-                                            <option value="1">Entertainment</option>
-                                            <option value="2">Education</option>
-                                            <option value="3">Career Guidance</option>
-                                            <option value="4">Work experience</option>
-                                        </select>
-                                        <br>
-                                        <button style="background-color: #550158;"
-                                            class="btn waves-effect waves-light right" type="submit">Submit</button>
-                                        <br>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-                <!-- <div id="modal1" class="modal" style="background-color: #e883ff;">
-                    <div class="modal-content">
-                        <form method="post">
-                            
-                        </form>
-                    </div>
-                </div> -->
-                <!-- ============================================================== -->
-                <!-- Category filter -->
+                <!-- Subject filter -->
                 <!-- ============================================================== -->
                 <div class="row">
                     <div class="col l6 m20 s6">
                         <div class="card">
                             <div class="card-content">
-                                <label>Choose the category of Post</label>
+                                <label>Choose the Semester</label>
                                 <select class="input-field" style="width: 100px;">
                                     <option value="0" disabled selected>--Select your option--</option>
-                                    <option value="1">Entertainment</option>
-                                    <option value="2">Education</option>
-                                    <option value="3">Career Guidance</option>
-                                    <option value="4">Work experience</option>
+                                    <option value="1">Semester 01</option>
+                                    <option value="2">Semester 02</option>
+                                    <option value="3">Semester 03</option>
+                                    <option value="4">Semester 04</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col l6 m20 s6">
+                        <div class="card">
+                            <div class="card-content">
+                                <label>Choose the Subject</label>
+                                <select class="input-field" style="width: 100px;">
+                                    <option value="0" disabled selected>--Select your option--</option>
+                                    <option value="1">Language Processor</option>
+                                    <option value="2">Data warehouse and mining</option>
+                                    <option value="3">Mobile computing</option>
+                                    <option value="4">Tcp/Ip</option>
                                 </select>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- ============================================================== -->
-                <!-- Posts -->
-                <!-- ============================================================== -->
-
-                <section class="testimonial_section">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <div class="testimonial_box">
-                                    <div class="testimonial_container">
-                                        <div class="background_layer"></div>
-                                        <div class="layer_content">
-                                            <div class="testimonial_owlCarousel owl-carousel">
-                                                <div class="testimonials">
-                                                    <div class="testimonial_content">
-                                                        <div class="testimonial_caption">
-                                                            <h6>Robert Clarkson</h6>
-                                                            <span>CEO, Axura</span>
-                                                        </div>
-                                                        <p>The team at Tectxon industry is very talented, dedicated,
-                                                            well organized and knowledgeable. I was most satisfied with
-                                                            the quality of the workmanship. They did excellent work.</p>
-
-                                                        <!--<i class="fas fa-heart pulse"></i> -->
-                                                        <i class="far fa-heart js-heart heart"></i>
+               <!-- ============================================================== -->
+            <!-- Table -->
+            <!-- ============================================================== -->
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col s12">
+                        <div class="card">
+                            <div class="card-content">
+                                <h4 class="card-title">Recommended Books</h4>
+                                <h6 class="card-subtitle"></h6>
+                                <div class="table-responsive">
+                                    <table id="demo-foo-addrow2" class="table m-t-10 highlight toggle-circle" data-page-size="10">
+                                        <thead>
+                                            <tr>
+                                                <th>Subject</th>
+                                                <th>Book Name</th>
+                                                <th>Author</th>
+                                                <th>Branch</th>
+                                                <th>Year</th>
+                                                <th>Semester</th>
+                                                <th>Recommended by</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {% for row in value %} 
+                                            <tr>
+                                               <td>{{row[0]}}</td>
+                                               <td>{{row[1]}}</td>
+                                               <td>{{row[3]}}</td>
+                                               <td>{{row[4]}}</td>
+                                               <td>{{row[5]}}</td>
+                                               <td>{{row[6]}}</td>
+                                               <td>{{row[2]}}</td>
+                                            </tr>   
+                                            {% endfor %}
+                                            <!-- <tr>
+                                                <td>1</td>
+                                                <td>
+                                                    <div class="chip">
+                                                        <img src="/static/images/book1.jpg" alt="book 1">Book1
                                                     </div>
-                                                    <div class="images_box">
-                                                        <div class="testimonial_img">
-                                                            <img class="img-center"
-                                                                src="/static/images/akki.jpg"
-                                                                alt="images not found">
-                                                        </div>
+                                                </td>
+                                                <td>Author 1</td>
+                                                <td>450/-</td>
+                                                <td><div id="read-only-stars"></div></td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td>
+                                                    <div class="chip">
+                                                        <img src="/static/images/book2.jpg" alt="book 2"> Book 2
                                                     </div>
-                                                </div>
-                                                <div class="testimonials">
-                                                    <div class="testimonial_content">
-                                                        <div class="testimonial_caption">
-                                                            <h6>Robert Clarkson</h6>
-                                                            <span>CEO, Axura</span>
-                                                        </div>
-                                                        <p>The team at Tectxon industry is very talented, dedicated,
-                                                            well organized and knowledgeable. I was most satisfied with
-                                                            the quality of the workmanship. They did excellent work.</p>
-
-                                                        <i class="far fa-heart js-heart heart"></i>
+                                                </td>
+                                                <td>Author 2</td>
+                                                <td>750/-</td>
+                                                <td><div id="read-only-stars1"></div></td>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>3</td>
+                                                <td>
+                                                    <div class="chip">
+                                                        <img src="/static/images/book3.jpg" alt="book 3">Book 3
                                                     </div>
-                                                    <div class="images_box">
-                                                        <div class="testimonial_img">
-                                                            <img class="img-center"
-                                                                src="/static/images/Tiger.jpg"
-                                                                alt="images not found">
-                                                        </div>
+                                                </td>
+                                                <td>Author 3</td>
+                                                <td>490/-</td>
+                                                <td><div id="read-only-stars2"></div></td>
+                                            </tr>
+                                            <tr>
+                                                <td>4</td>
+                                                <td>
+                                                    <div class="chip">
+                                                        <img src="/static/images/book4.jpg" alt="book 4">Book 4
                                                     </div>
-                                                </div>
-                                                <div class="testimonials">
-                                                    <div class="testimonial_content">
-                                                        <div class="testimonial_caption">
-                                                            <h6>Robert Clarkson</h6>
-                                                            <span>CEO, Axura</span>
-                                                        </div>
-                                                        <p>The team at Tectxon industry is very talented, dedicated,
-                                                            well organized and knowledgeable. I was most satisfied with
-                                                            the quality of the workmanship. They did excellent work.</p>
-
-                                                        <i class="far fa-heart js-heart heart"></i>
-                                                    </div>
-                                                    <div class="images_box">
-                                                        <div class="testimonial_img">
-                                                            <img class="img-center"
-                                                                src="/static/images/akki.jpg"
-                                                                alt="images not found">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                                </td>
+                                                <td>Author 4</td>
+                                                <td>480/-</td>
+                                                <td><div id="read-only-stars3"></div></td>
+                                            </tr> -->
+                                        </tfoot>
+                                    </table>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </section>
-                <!-- carousel -->
+                </div>
+            </div>  
 
-                <!-- Carousel wrapper -->
+             
 
             </div>
             <footer class="center-align m-b-30">All Rights Reserved by GCOEN. Designed and Developed by Alefiyah
@@ -427,50 +386,9 @@
     <script src="/static/js/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js"></script>
     <script src="/static/js/sparkline.js"></script>
     <script src="/static/js/dashboard1.js"></script>
-    <script src="/static/js/tinymce/tinymce.min.js"></script>
-    <script type="text/javascript"
-        src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.js"></script>
-    <script>
-        $('.testimonial_owlCarousel').owlCarousel({
-            loop: true,
-            margin: 10,
-            dots: false,
-            nav: true,
-            autoplay: false,
-            smartSpeed: 3000,
-            autoplayTimeout: 4000,
-            responsive: {
-                0: {
-                    items: 1
-                },
-                600: {
-                    items: 1
-                },
-                1000: {
-                    items: 1
-                }
-            }
-        })
-    </script>
-    <script>
-        $(document).ready(function () {
-
-            if ($("#mymce").length > 0) {
-                tinymce.init({
-                    selector: "textarea#mymce",
-                    theme: "modern",
-                    height: 300,
-                    plugins: [
-                        "advlist autolink link image lists charmap print preview hr anchor pagebreak spellchecker",
-                        "searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking",
-                        "save table contextmenu directionality emoticons template paste textcolor"
-                    ],
-                    toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | l      ink image  | forecolor backcolor emoticons",
-
-                });
-            }
-        });
-    </script>
+    <script src="/static/js/raty-js/lib/jquery.raty.js"></script>
+    <script src="/static/js/raty/rating-init.js"></script>
+       
     <script>
         $('.tooltipped').tooltip();
         // ============================================================== 
@@ -497,35 +415,7 @@
 
         }
     </script>
-    <script>
-        // gets a reference to the heartDOm
-        const heartDOM = document.querySelector('.js-heart');
-        // initialized like to false when user hasnt selected
-        let liked = false;
-
-        // create a onclick listener
-        heartDOM.onclick = (event) => {
-            // check if liked 
-            liked = !liked; // toggle the like ( flipping the variable)
-
-            // this is what we clicked on
-            const target = event.currentTarget;
-
-            if (liked) {
-                // remove empty heart if liked and add the full heart
-                target.classList.remove('far');
-                target.classList.add('fas', 'pulse');
-            } else {
-                // remove full heart if unliked and add empty heart
-                target.classList.remove('fas');
-                target.classList.add('far');
-            }
-        }
-
-        heartDOM.addEventListener('animationend', (event) => {
-            event.currentTarget.classList.remove('pulse');
-        })
-    </script>
+    
 </body>
 
 </html>
