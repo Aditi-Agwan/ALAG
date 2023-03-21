@@ -37,103 +37,99 @@
             <!-- ============================================================== -->
             <!-- Navbar scss in header.scss -->
             <!-- ============================================================== -->
-            <nav style="background-color: #e883ff;">
-                <div class="nav-wrapper" style="background-color: #e883ff;">
+            <nav class="light-blue">
+                <div class="nav-wrapper light-blue">
+                
                     <!-- ============================================================== -->
-                    <!-- Logo -->
-                    <!-- ============================================================== -->
-                    <a href="javascript:void(0)">
-                        <span class="icon">
-                            <img class="light-logo" src="/static/images/logo.png" style="height: 64px; width: 200px;">
-                        </span>
-                    </a>
-                    <!-- ============================================================== -->
-                    <!-- Search Button -->
+                    <!-- Home Button -->
                     <!-- ============================================================== -->
                     <ul>
                         <li class="home">
                             <a href="/student"><i class="material-icons">home</i></a>
                         </li>
-                        
-
-                    <ul class="right">
-
-                        <!-- ============================================================== -->
-                        <!-- Profile icon scss in header.scss -->
-                        <!-- ============================================================== -->
-                        <!-- ============================================================== -->
-                        <!-- Profile Information -->
-                        <!-- ============================================================== -->
-                        <li><a class="dropdown-trigger" href="javascript: void(0);" data-target="user_dropdown"><img
-                                    src="/static/images/users/profile.png" alt="user" class="circle profile-pic"></a>
-                            <ul id="user_dropdown" class="mailbox dropdown-content dropdown-user">
-                                <li>
-                                    <div class="dw-user-box">
-                                        <div class="u-img"><img src="/static/images/users/profile.png" alt="user">
-                                        </div>
-                                        <div class="u-text">
-                                            <h4>{{username}}</h4>
-                                            <p>{{email}}</p>
-                                            <a class="waves-effect waves-light btn-small red white-text">View
-                                                Profile</a>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li role="separator" class="divider"></li>
-                                <li><a href="#modal12" class="modal-trigger"><i
-                                            class="material-icons">account_circle</i> My Profile</a></li>
-                                <li role="separator" class="divider"></li>
-                                <li><a href="#modal11" class="modal-trigger"><i class="material-icons">settings</i>
-                                        Account Settings</a></li>
-                                <li role="separator" class="divider"></li>
-                                <li><a href="/logout"><i class="material-icons">power_settings_new</i> Logout</a>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                    <div id="modal11" class="modal" style="background-color: #e883ff; width: 400px;">
-                        <div class="modal-content">
-                            <div class="card">
-                                <div class="card-content">
-                                    <form class="" method="post">
-                                        <div class="row">
-                                            <div class="input-field col s12">
-                                                <input id="password" type="password" class="validate" required>
-                                                <label for="password">Enter your current password</label>
+                        <ul class="right">
+                   
+                            <!-- ============================================================== -->
+                            <!-- Profile Information -->
+                            <!-- ============================================================== -->
+                              
+                            <li><a class="dropdown-trigger" href="javascript: void(0);" data-target="user_dropdown"><img src="/static/images/users/profile.png" alt="user" class="circle profile-pic"></a>
+                                <ul id="user_dropdown" class="mailbox dropdown-content dropdown-user">
+                                    <li>
+                                        <div class="dw-user-box">
+                                            <div class="u-img"><img src="/static/images/users/profile.png" alt="user"></div>
+                                            <div class="u-text">
+                                                <h4>{{username}}</h4>
+                                                <p>{{email}}</p>
+                                                <a href="#modal13" class="waves-effect waves-light btn-small red white-text modal-trigger">View Profile</a>
                                             </div>
                                         </div>
-                                        <div class="row">
-                                            <div class="input-field col s12">
-                                                <input id="password" type="password" class="validate" required>
-                                                <label for="password">Enter your new password</label>
+                                    </li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="#modal12" class="modal-trigger"><i class="material-icons">account_circle</i> My Profile</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="#modal11" class="modal-trigger"><i class="material-icons">settings</i> Account Setting</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="/logout"><i class="material-icons">power_settings_new</i> Logout</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <!--Account Settings modal-->
+                        <div id="modal11" class="modal light-blue darken-4" style="width: 400px;">
+                            <div class="modal-content">
+                                <div class="card">
+                                    <div class="card-content">
+                                        <form class="" method="post">
+                                            <div class="row">
+                                                <div class="input-field col s12">
+                                                    <input id="password" type="password" class="validate" required>
+                                                    <label for="password">Enter your current password</label>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="row">
-                                            <button class="btn waves-effect waves-light red right" type="submit"
-                                                name="action" style="margin-top: 10px;">Submit</button>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="modal12" class="modal" style="background-color: #e883ff; width: 400px;">
-                        <div class="modal-content">
-                            <div class="card">
-                                <div class="card-content center">
-                                    <img src="/static/images/users/profile.png" alt="profile"
-                                        style="height: 200px; width: 200px;">
-                                    <div onclick="importData()" class="btn btn-floating btn-large"
-                                        style="margin: -170px 0px -125px -50px">
-                                        <i class="material-icons">edit</i>
-                                    </div>
-                                    <div class="row" style="margin-top: -30px;">
-                                        <input id="profileName" type="text" value="{{username}}">
+                                            <div class="row">
+                                                <div class="input-field col s12">
+                                                    <input id="password" type="password" class="validate" required>
+                                                    <label for="password">Enter your new password</label>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <button class="btn waves-effect waves-light red right" type="submit"
+                                                    name="action" style="margin-top: 10px;">Submit</button>
+                                            </div>
+                                        </form>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                        <!--My Profile Modal-->
+                        <div id="modal12" class="modal light-blue darken-4" style="width: 400px;">
+                            <div class="modal-content">
+                                <div class="card">
+                                    <div class="card-content center">
+                                        <img src="/static/images/users/profile.png" alt="profile"
+                                            style="height: 200px; width: 200px;">
+                                        <div onclick="importData()" class="btn btn-floating btn-large red accent-3"
+                                            style="margin: -170px 0px -125px -50px">
+                                            <i class="material-icons">edit</i>
+                                        </div>
+                                        <div class="row" style="margin-top: -30px;">
+                                            <input id="profileName" type="text" value="{{username}}">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--View Profile Modal-->
+                        <div id="modal13" class="modal light-blue darken-4" style="width: 400px;">
+                            <div class="modal-content">
+                                <div class="card">
+                                    <div class="card-content center">
+                                        <img src="/static/images/users/profile.png" alt="profile"
+                                            style="height: 200px; width: 200px;">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     <!-- ============================================================== -->
                     <!-- Right topbar icon scss in header.scss -->
                     <!-- ============================================================== -->
@@ -232,7 +228,7 @@
                                     </div>
                                     <div class="col s12 m6">
                                         <label class="control-label">Choose Category Color</label>
-                                        <select class="form-control form-white" data-placeholder="Choose a color..." name="category-color">
+                                        <select class="form-control form-white" data-placeholder="Choose a color." name="category-color">
                                             <option value="green">Success</option>
                                             <option value="red">Danger</option>
                                             <option value="blue">Info</option>
@@ -253,8 +249,14 @@
              
 
             </div>
-            <footer class="center-align m-b-30">All Rights Reserved by ALAG. Designed and Developed by Alefiyah
-                Sanawadwala. Vidhi Gupta. Aditi Agwan. Riddhi Hedaoo. </footer>
+            <footer class="page-footer light-blue darken-3"> 
+                <span class="right">©2023 All rights reserved by ALAG</span>
+                <!--<a class="White-text  right" href="#!">More Links</a>-->
+                <a href="#" class="btn indigo darken-1 tooltipped btn-floating" data-position="top" data-tooltip="Facebook"><i class="fab fa-facebook-f"></i></a> 
+                <a href="#" class="btn pink darken-2 tooltipped btn-floating " data-position="top" data-tooltip="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="btn green lighten-2 tooltipped btn-floating " data-position="top" data-tooltip="Whatsapp"><i class="fab fa-whatsapp"></i></a>
+                <a href="#" class="btn light-blue tooltipped btn-floating " data-position="top" data-tooltip="Twitter"><i class="fab fa-twitter"></i></a>
+            </footer>
         </div>
         <!-- ============================================================== -->
         <!-- Page wrapper scss in scafholding.scss -->
@@ -264,8 +266,7 @@
         <!-- ============================================================== -->
 
         <a href="#" data-target="right-slide-out"
-            class="sidenav-trigger right-side-toggle btn-floating btn-large waves-effect waves-light"
-            style="background-color: #e883ff;"><i class="material-icons">settings</i></a>
+            class="sidenav-trigger right-side-toggle btn-floating btn-large waves-effect waves-light light-blue darken-4"><i class="material-icons">settings</i></a>
         <aside class="right-sidebar">
             <!-- Right Sidebar -->
             <ul id="right-slide-out" class="sidenav right-sidenav p-t-10">
