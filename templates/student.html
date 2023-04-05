@@ -40,32 +40,37 @@
             <!-- ============================================================== -->
             <!-- Navbar scss in header.scss -->
             <!-- ============================================================== -->
-            <nav style="background-color: #e883ff;">
-                <div class="nav-wrapper" style="background-color: #e883ff;">
+            <nav class="light-blue">
+                <div class="nav-wrapper light-blue">
                     <!-- ============================================================== -->
                     <!-- Logo -->
                     <!-- ============================================================== -->
-                    <a href="javascript:void(0)">
+                    <!--<a href="javascript:void(0)">
                         <span class="icon">
                             <img class="light-logo" src="/static/images/logo.png" style="height: 64px; width: 200px;">
                         </span>
-                    </a>
+                    </a>-->
                     <!-- ============================================================== -->
                     <!-- Search Button -->
                     <!-- ============================================================== -->
                     <ul>
+                        <li class="home">
+                            <a href="index.html"><i class="material-icons">home</i></a>
+                        </li> 
                         <li class="search-box">
                             <a href="javascript: void(0);"><i class="material-icons">search</i></a>
                             <form class="app-search">
                                 <input type="text" class="form-control" placeholder="Type your text &amp; press enter"> <a class="srh-btn"><i class="ti-close"></i></a>
                             </form>
-                        </li>   
+                        </li> 
                     </ul>
                     
-                    <ul class="right">
+            <ul class="right">
+                   
                         <!-- ============================================================== -->
                         <!-- Profile Information -->
                         <!-- ============================================================== -->
+                          
                         <li><a class="dropdown-trigger" href="javascript: void(0);" data-target="user_dropdown"><img src="/static/images/users/profile.png" alt="user" class="circle profile-pic"></a>
                             <ul id="user_dropdown" class="mailbox dropdown-content dropdown-user">
                                 <li>
@@ -74,7 +79,7 @@
                                         <div class="u-text">
                                             <h4>{{username}}</h4>
                                             <p>{{email}}</p>
-                                            <a class="waves-effect waves-light btn-small red white-text">View Profile</a>
+                                            <a href="#modal13" class="waves-effect waves-light btn-small red white-text modal-trigger">View Profile</a>
                                         </div>
                                     </div>
                                 </li>
@@ -87,7 +92,8 @@
                             </ul>
                         </li>
                     </ul>
-                    <div id="modal11" class="modal" style="background-color: #e883ff; width: 400px;">
+                    <!--Account Settings modal-->
+                    <div id="modal11" class="modal light-blue darken-4" style="width: 400px;">
                         <div class="modal-content">
                             <div class="card">
                                 <div class="card-content">
@@ -113,19 +119,31 @@
                             </div>
                         </div>
                     </div>
-                    <div id="modal12" class="modal" style="background-color: #e883ff; width: 400px;">
+                    <!--My Profile Modal-->
+                    <div id="modal12" class="modal light-blue darken-4" style="width: 400px;">
                         <div class="modal-content">
                             <div class="card">
                                 <div class="card-content center">
                                     <img src="/static/images/users/profile.png" alt="profile"
                                         style="height: 200px; width: 200px;">
-                                    <div onclick="importData()" class="btn btn-floating btn-large"
+                                    <div onclick="importData()" class="btn btn-floating btn-large red accent-3"
                                         style="margin: -170px 0px -125px -50px">
                                         <i class="material-icons">edit</i>
                                     </div>
                                     <div class="row" style="margin-top: -30px;">
                                         <input id="profileName" type="text" value="{{username}}">
                                     </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--View Profile Modal-->
+                    <div id="modal13" class="modal light-blue darken-4" style="width: 400px;">
+                        <div class="modal-content">
+                            <div class="card">
+                                <div class="card-content center">
+                                    <img src="/static/images/users/profile.png" alt="profile"
+                                        style="height: 200px; width: 200px;">
                                 </div>
                             </div>
                         </div>
@@ -141,100 +159,90 @@
         </header>
         
         <!-- ============================================================== -->
-        <!-- FOR ADMIN PANEL -->
+        <!-- STUDENT DASHBOARD -->
         <!-- ============================================================== -->
+       
         <!-- ============================================================== -->
-        <!-- Sidebar scss in sidebar.scss -->
-        <!-- ============================================================== -->
-        <!-- ============================================================== -->
-        <!-- Page wrapper scss in scafholding.scss -->
-        <!-- ============================================================== -->
-        <div class="page-wrapper" style="margin-left: unset !important;">
+        <div class="page-wrapper light-blue" style="margin-left: unset !important;">
+        
             <!-- ============================================================== -->
-            <!-- Title and breadcrumb -->
-            <!-- ============================================================== -->
-
-            <!-- ============================================================== -->
-            <!-- Container fluid scss in scafholding.scss -->
-            <!-- ============================================================== -->
-            <div class="container-fluid">
+            <div class="container-fluid split">
                 <!-- ============================================================== -->
                 <!-- Background -->
                 <!-- ============================================================== -->
-           
-                        <!-- ============================================================== -->
-                        <!-- Buttons Summery -->
-                        <!-- ============================================================== -->
-                        <div class="row">
-                                <div class="row">
-                                    <div class="col l4 m20 s6">
-                                        <div class="card danger-gradient card-hover">
-                                            <a href="/micro-blogging">
-                                            <div class="card-content">
-                                                <div class="d-flex no-block align-items-center">
-                                                    <img src="/static/images/MicroBlogging.jpeg" alt="Image" style="width: 350px; height:250px;">     
-                                                </div>
-                                                <br>
-                                                <center><h4><span class="font-medium" style="color: white;">Micro-blogging</span></h4></center>
-                                            </div>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="col l4 m20 s6">
-                                        <div class="card danger-gradient card-hover">
-                                            <a href="/calendar">
-                                            <div class="card-content">
-                                                <div class="d-flex no-block align-items-center">
-                                                    <img src="/static/images/academic calendar.jpeg" alt="Image" style="width: 350px; height:250px;">   
-                                                </div>
-                                                <br>
-                                                <center><h4><span class="font-medium" style="color: white;">Academic Calendar</span></h4></center>
-                                            </div>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="col l4 m20 s6">
-                                        <div class="card danger-gradient card-hover">
-                                            <a href="/books">
-                                            <div class="card-content">
-                                                <div class="d-flex no-block align-items-center">
-                                                    <img src="/static/images/books recommender.jpeg" alt="Image" style="width: 350px; height:250px;">   
-                                                </div>
-                                                <br>
-                                                <center><h4><span class="font-medium" style="color: white;">Books Recommender</span></h4></center>
-                                            </div>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    </div>
+                <div class="row">
+                    
+                <img src="/static/images/Upskilling.jpg" alt="Image" style="height: 300px; width: 500px;">
+                <h1 class="right" style="color: #040415;">Welcome to ALAG!</h1>
+                
+                <p class="right" style="font-size: 15px; color: #040415; margin-top: -200px; text-align: right;">ALAG, an online application, represents an effort to help to interact with their classmates and with <br>their academic lives.It provides a Micro-blogging platform with additional emoticon feature to help<br> readers understand message, connect with other students and have productive interaction, dynamic<br> calendar that contains events like job fairs and college fest along with all the necessary requirements<br> and a book recommender module to list books suggested by professors. </p>
+                </div> 
+            <!-- ============================================================== -->
+            <!-- Buttons Summery -->
+            <!-- ============================================================== -->
+            <div class="row">
+                    <div class="row">
+                        <div class="col l4 m20 s6">
+                            <div class="card red accent-3 card-hover">
+                                <a href="/micro-blogging">
+                                <div class="card-content">
+                                    <center><h1><i class="material-icons white-text">forum</i></h1></center>
+                                    <center><h4><span class="white-text">Micro-blogging</span></h4></center>
                                 </div>
+                                </a>
+                            </div>
                         </div>
-                       
-                   
-
-                
-                
+                        <div class="col l4 m20 s6">
+                            <div class="card red accent-3 card-hover">
+                                <a href="/calendar">
+                                <div class="card-content">
+                                    <center><h1><i class="material-icons white-text">calendar_today</i></h1></center>
+                                    <center><h4><span class="white-text">Academic Calendar</span></h4></center>
+                                </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col l4 m20 s6">
+                            <div class="card red accent-3 card-hover">
+                                <a href="/books">
+                                <div class="card-content">
+                                    <center><h1><i class="material-icons white-text">book</i></h1></center>
+                                    <center><h4><span class="white-text">Books Recommender</span></h4></center>
+                                </div>
+                                </a>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+            </div>
+              
             <!-- ============================================================== -->
-            <!-- Container fluid scss in scafholding.scss -->
+            <!-- Footer -->
             <!-- ============================================================== -->
-            <footer class="center-align m-b-30">All Rights Reserved by ALAG. Designed and Developed by Alefiyah
-                Sanawadwala. Vidhi Gupta. Aditi Agwan. Riddhi Hedaoo.</footer>
+            <footer class="page-footer light-blue darken-3"> 
+                <span class="right">©2023 All rights reserved by ALAG</span>
+                <!--<a class="White-text  right" href="#!">More Links</a>-->
+                <a href="#" class="btn indigo darken-1 tooltipped btn-floating" data-position="top" data-tooltip="Facebook"><i class="fab fa-facebook-f"></i></a> 
+                <a href="#" class="btn pink darken-2 tooltipped btn-floating " data-position="top" data-tooltip="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="btn green lighten-2 tooltipped btn-floating " data-position="top" data-tooltip="Whatsapp"><i class="fab fa-whatsapp"></i></a>
+                <a href="#" class="btn light-blue tooltipped btn-floating " data-position="top" data-tooltip="Twitter"><i class="fab fa-twitter"></i></a>
+            </footer>
         </div>
         <!-- ============================================================== -->
         <!-- Page wrapper scss in scafholding.scss -->
         <!-- ============================================================== -->
         <!-- ============================================================== -->
-        <!-- Right Sidebar -->
+        <!-- Settings -->
         <!-- ============================================================== -->
-        <a href="#" data-target="right-slide-out" class="sidenav-trigger right-side-toggle btn-floating btn-large waves-effect waves-light"  style="background-color: #e883ff;"><i class="material-icons">settings</i></a>
-        <aside class="right-sidebar">
-            <!-- Right Sidebar -->
+       <a href="#" data-target="right-slide-out" class="sidenav-trigger right-side-toggle btn-floating btn-large waves-effect waves-light light-blue darken-4"><i class="material-icons">settings</i></a>
+        <!--Right Sidebar-->
+       <aside class="right-sidebar"> 
             <ul id="right-slide-out" class="sidenav right-sidenav p-t-10">
                 <li>
                     <div class="row">
                         <div class="col s12">
                         </div>
-                        <!-- Setting -->
+                        
                         <div id="settings" class="col s12">
                             <div class="m-t-10 p-10 b-b">
                                 <h4 class="font-medium">Settings</h4>

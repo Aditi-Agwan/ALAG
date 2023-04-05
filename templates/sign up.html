@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" sizes="16x16" href="/static/images/gcoen_logo.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/images/logo.png">
     <title>Academic Life Assistance and Guidance</title>
     <link href="/static/css/style.css" rel="stylesheet">
     <!-- This page CSS -->
@@ -21,7 +21,7 @@
 
 <body>
     <!--Alert Box-->
-    {% for message in get_flashed_messages() %}
+   {% for message in get_flashed_messages() %}
         alert({{ message }})
     {% endfor %}
     <div class="main-wrapper">
@@ -40,65 +40,54 @@
         <!-- ============================================================== -->
         <!-- Login box.scss -->
         <!-- ============================================================== -->
-        <div class="auth-wrapper d-flex no-block justify-content-center align-items-center" style="background-color: #e883ff;">
-            <div class="auth-box" style="margin-top: 10px;">
+        <div class="auth-wrapper d-flex no-block justify-content-center align-items-center light-blue lighten-4">
+            <div class="auth-box" style="margin-top: 10px; max-width: 750px;">
                 <div id="loginform">
                     <div class="logo">
-                        <span class="db"><img src="/static/images/users/profile.png" alt="logo" style="height: 60px; width: 60px;" ></span>
-                        <h5 class="font-medium m-b-20">Register</h5>
+                        <span class="db"><img src="/static/images/users/profile.png" alt="logo" style="height: 40px; width: 40px;" ></span>
+                        <h5 class="font-medium">Register</h5>
                     </div>
                     <!-- Form -->
                     <div class="row">
-                        <form class="col s12" action="" method="POST">
+                        <form class="" action="" method="POST">
                             <!-- NAME -->
                             <div class="row">
-                                <div class="input-field col s12">
+                                <div class="input-field col l6">
                                     <input name="username" type="text" class="validate" required>
                                     <label for="username">Name</label>
                                 </div>
-                            </div>
+                            
                             <!-- email -->
-                            <div class="row">
-                                <div class="input-field col s12">
+                            
+                                <div class="input-field col l6">
                                     <input name="email" type="email" class="validate" required>
                                     <label for="email">Email</label>
                                 </div>
                             </div>
-                            <!-- gender -->
-                            <div class="row">
-                                <div class="input-field col s12">
-                                    <label for="gender">Gender</label>
-                                </div>
-                                <div class="input-field col s12">    
-                                    <select class="validate" name="gender" style="display:block;" required>
-                                        <option value="0" disabled selected>--Select your option--</option>
-                                        <option value="Male">Male</option>
-                                        <option value="Female">Female</option>
-                                        
-                                    </select>
-                                </div>
-                            </div>    
-                              
+                        
                             <!-- COLLEGE NAME -->
                             <div class="row">
-                                <div class="input-field col s12">
+                                <div class="input-field col l6">
                                     <input name="college" type="text" class="validate" required>
                                     <label for="college">College</label>
                                 </div>
-                            </div>
+                            
                             <!-- BRANCH -->
-                            <div class="row">
-                                <div class="input-field col s12">
+                            
+                                <div class="input-field col l6">
                                     <input name="branch" type="text" class="validate" required>
                                     <label for="branch">Branch</label>
                                 </div>
                             </div>
                             <!-- YEAR OF STUDY -->
                             <div class="row">
-                                <div class="input-field col s12">
+                                <div class="input-field col l6">
                                     <label for="yos">Year of Study</label>
-                                </div>    
-                                <div class="input-field col s12">
+                                </div>
+                                <div class="input-field col l6">
+                                    <label for="gender">Gender</label>
+                                </div> 
+                                <div class="input-field col s6">
                                     <select class="validate" name="yos" style="display: block;" required>
                                         <option value="0" disabled selected>--Select your option--</option>
                                         <option value="1">1st Year</option>
@@ -107,18 +96,29 @@
                                         <option value="4">4th Year</option>
                                     </select>
                                 </div>
-                            </div>
-                             
+                            
+                             <!-- gender -->
+                            
+                               
+                                <div class="input-field col s6">    
+                                    <select class="validate" name="gender" style="display:block;" required>
+                                        <option value="0" disabled selected>--Select your option--</option>
+                                        <option value="Male">Male</option>
+                                        <option value="Female">Female</option>
+                                        
+                                    </select>
+                                </div>
+                            </div>    
                             <!-- pwd -->
                             <div class="row">
-                                <div class="input-field col s12">
+                                <div class="input-field col l6">
                                     <input name="password" type="password" class="validate" required>
                                     <label for="password">Password</label>
                                 </div>
-                            </div>
+                            
                             <!-- pwd -->
-                            <div class="row">
-                                <div class="input-field col s12">
+                            
+                                <div class="input-field col l6">
                                     <input name="cpassword" type="password" class="validate" required>
                                     <label for="cpassword">Confirm Password</label>
                                 </div>
@@ -126,9 +126,12 @@
                            
                             <!-- sign up -->
                             <div class="row m-t-15">
-                                <div class="col s12">
-                                    <a class="btn btn-large w100 red accent-4"><input type="submit" value="Sign up"></a>
+                                <div class="col s6 center">
+                                    <button class="red w100 btn-large btn accent-4" onclick="window.location.href='student.html'" style="margin-left: 180px;">Sign up</button>
                                 </div>
+                            </div>
+                            <div class="center-align m-t-20 db">
+                                <a href="#" class="btn indigo darken-1 tooltipped m-r-5" data-position="top" data-tooltip="Login with Facebook"><i class="fab fa-facebook-f"></i></a> <a href="#" class="btn orange darken-4 tooltipped m-r-5" data-position="top" data-tooltip="Login with Gmail"><i class="fab fa-google-plus-g"></i></a>
                             </div>
                         </form>
                     </div>
@@ -138,21 +141,7 @@
                 </div>
             </div>
         </div>
-        <!-- ============================================================== -->
-        <!-- Login box.scss -->
-        <!-- ============================================================== -->
-        <!-- ============================================================== -->
-        <!-- Page wrapper scss in scafholding.scss -->
-        <!-- ============================================================== -->
-        <!-- ============================================================== -->
-        <!-- Page wrapper scss in scafholding.scss -->
-        <!-- ============================================================== -->
-        <!-- ============================================================== -->
-        <!-- Right Sidebar -->
-        <!-- ============================================================== -->
-        <!-- ============================================================== -->
-        <!-- Right Sidebar -->
-        <!-- ============================================================== -->
+      
     </div>
     <!-- ============================================================== -->
     <!-- All Required js -->
