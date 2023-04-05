@@ -8,7 +8,7 @@ import datetime
 app= Flask(__name__)
 app.secret_key="Secret@11"
 #Configure db
-db = yaml.load(open('db.yaml'),Loader=yaml.Loader)
+db = yaml.load(open('ALAG-MAIN/db.yaml'),Loader=yaml.Loader)
 app.config['MYSQL_HOST'] = db['mysql_host']
 app.config['MYSQL_USER'] = db['mysql_user']
 app.config['MYSQL_PASSWORD'] = db['mysql_password']
@@ -20,7 +20,7 @@ mysql = MySQL(app)
 def sentiment(blog):
         final_list_pos = []
         count_pos=0
-        positive_words = open('positive-words.txt',"r")
+        positive_words = open('ALAG-main/positive-words.txt',"r")
         list_pos = positive_words.readlines()
         for i in list_pos:
             final_list_pos.append(i.strip())
@@ -33,7 +33,7 @@ def sentiment(blog):
         print(count_pos)
         final_list_neg = []
         count_neg=0
-        negative_words = open('negative-words.txt',"r")
+        negative_words = open('ALAG-main/negative-words.txt',"r")
         list_neg = negative_words.readlines()
         for i in list_neg:
              final_list_neg.append(i.strip())
@@ -56,7 +56,7 @@ def sentiment(blog):
 
 #Censoring
 def censor(sentence):
-        badwords = open('wordlist.txt')
+        badwords = open('ALAG-MAIN/wordlist.txt')
         lines=[]
         for line in badwords:
             lines.append(line.strip())

@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" sizes="16x16" href="images/logo.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/images/logo.png">
     <title>Academic Life Assistance and Guidance</title>
     <!-- chartist CSS -->
     <link href="/static/js/chartist/dist/chartist.min.css" rel="stylesheet">
@@ -33,7 +33,6 @@
 </head>
 
 <body>
-
     <div class="main-wrapper" id="main-wrapper">
         <!-- ============================================================== -->
         <!-- Preloader - style you can find in spinners.css -->
@@ -51,18 +50,11 @@
             <!-- ============================================================== -->
             <!-- Navbar scss in header.scss -->
             <!-- ============================================================== -->
-            <nav style="background-color: #e883ff;">
-                <div class="nav-wrapper" style="background-color: #e883ff;">
+            <nav class="light-blue">
+                <div class="nav-wrapper light-blue">
+                   
                     <!-- ============================================================== -->
-                    <!-- Logo -->
-                    <!-- ============================================================== -->
-                    <a href="javascript:void(0)">
-                        <span class="icon">
-                            <img class="light-logo" src="/static/images/logo.png" style="height: 64px; width: 200px;">
-                        </span>
-                    </a>
-                    <!-- ============================================================== -->
-                    <!-- Search Button -->
+                    <!-- Home Button -->
                     <!-- ============================================================== -->
                     <ul>
                         <li class="home">
@@ -76,43 +68,35 @@
                             </form>
                         </li>
                     </ul>
-
                     <ul class="right">
-
-                        <!-- ============================================================== -->
-                        <!-- Profile icon scss in header.scss -->
-                        <!-- ============================================================== -->
+                   
                         <!-- ============================================================== -->
                         <!-- Profile Information -->
                         <!-- ============================================================== -->
-                        <li><a class="dropdown-trigger" href="javascript: void(0);" data-target="user_dropdown"><img
-                                    src="/static/images/users/profile.png" alt="user" class="circle profile-pic"></a>
+                          
+                        <li><a class="dropdown-trigger" href="javascript: void(0);" data-target="user_dropdown"><img src="/static/images/users/profile.png" alt="user" class="circle profile-pic"></a>
                             <ul id="user_dropdown" class="mailbox dropdown-content dropdown-user">
                                 <li>
                                     <div class="dw-user-box">
-                                        <div class="u-img"><img src="/static/images/users/profile.png" alt="user">
-                                        </div>
+                                        <div class="u-img"><img src="/static/images/users/profile.png" alt="user"></div>
                                         <div class="u-text">
                                             <h4>{{username}}</h4>
                                             <p>{{email}}</p>
-                                            <a class="waves-effect waves-light btn-small red white-text">View
-                                                Profile</a>
+                                            <a href="#modal13" class="waves-effect waves-light btn-small red white-text modal-trigger">View Profile</a>
                                         </div>
                                     </div>
                                 </li>
                                 <li role="separator" class="divider"></li>
-                                <li><a href="#modal12" class="modal-trigger"><i
-                                            class="material-icons">account_circle</i> My Profile</a></li>
+                                <li><a href="#modal12" class="modal-trigger"><i class="material-icons">account_circle</i> My Profile</a></li>
                                 <li role="separator" class="divider"></li>
-                                <li><a href="#modal11" class="modal-trigger"><i class="material-icons">settings</i>
-                                        Account Settings</a></li>
+                                <li><a href="#modal11" class="modal-trigger"><i class="material-icons">settings</i> Account Setting</a></li>
                                 <li role="separator" class="divider"></li>
-                                <li><a href="/logout"><i class="material-icons">power_settings_new</i> Logout</a>
-                                </li>
+                                <li><a href="/logout"><i class="material-icons">power_settings_new</i> Logout</a></li>
                             </ul>
                         </li>
                     </ul>
-                    <div id="modal11" class="modal" style="background-color: #e883ff; width: 400px;">
+                    <!--Account Settings modal-->
+                    <div id="modal11" class="modal light-blue darken-4" style="width: 400px;">
                         <div class="modal-content">
                             <div class="card">
                                 <div class="card-content">
@@ -138,19 +122,31 @@
                             </div>
                         </div>
                     </div>
-                    <div id="modal12" class="modal" style="background-color: #e883ff; width: 400px;">
+                    <!--My Profile Modal-->
+                    <div id="modal12" class="modal light-blue darken-4" style="width: 400px;">
                         <div class="modal-content">
                             <div class="card">
                                 <div class="card-content center">
                                     <img src="/static/images/users/profile.png" alt="profile"
                                         style="height: 200px; width: 200px;">
-                                    <div onclick="importData()" class="btn btn-floating btn-large"
+                                    <div onclick="importData()" class="btn btn-floating btn-large red accent-3"
                                         style="margin: -170px 0px -125px -50px">
                                         <i class="material-icons">edit</i>
                                     </div>
                                     <div class="row" style="margin-top: -30px;">
                                         <input id="profileName" type="text" value="{{username}}">
                                     </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--View Profile Modal-->
+                    <div id="modal13" class="modal light-blue darken-4" style="width: 400px;">
+                        <div class="modal-content">
+                            <div class="card">
+                                <div class="card-content center">
+                                    <img src="/static/images/users/profile.png" alt="profile"
+                                        style="height: 200px; width: 200px;">
                                 </div>
                             </div>
                         </div>
@@ -185,20 +181,16 @@
                 <!-- ============================================================== -->
                 <a class="waves-effect waves-light"></a>
                 <div class="fixed-action-btn" style="bottom: 90px; right: 20px;">
-                    <a id="tap-target" class="btn btn-floating btn-large danger-gradient modal-trigger pulse"
+                    <a id="tap-target" class="btn btn-floating btn-large red accent-3 modal-trigger pulse"
                         href="#modal3"><i class="material-icons">add</i></a>
                 </div>
-                <div id="modal3" class="modal bottom-sheet" style="background-color: #e883ff;">
+                <div id="modal3" class="modal bottom-sheet light-blue darken-4">
                     <div class="modal-content">
                         <h5 class="header" style="color: white;">Type your post here</h5>
                         <div class="row">
                             <form method="post" action="/addpost">
                                 <textarea id="mymce" name="area"></textarea>
-                                <!-- <a style="background-color: #550158;"
-                                    class="btn waves-effect waves-light right m-t-10 modal-trigger" type="submit"
-                                    name="action" href="#modal1">
-                                    Post
-                                </a> -->
+                               
                                 <div class="card">
                                     <div class="card-content">
                                         <label>Choose the category of Post</label>
@@ -210,8 +202,7 @@
                                             <option value="4">Work experience</option>
                                         </select>
                                         <br>
-                                        <button style="background-color: #550158;"
-                                            class="btn waves-effect waves-light right" type="submit">Submit</button>
+                                        <button class="btn waves-effect waves-light right red accent-3" type="submit">Submit</button>
                                         <br>
                                     </div>
                                 </div>
@@ -242,7 +233,8 @@
                                      <option value="3">Career Guidance</option>
                                      <option value="4">Work experience</option>
                                  </select>
-                                 <input type="submit" >
+                                 <br>
+                                 <button class="btn waves-effect waves-light red" type="submit">Submit</button>
                                 </form>
                             </div>
                         </div>
@@ -310,8 +302,14 @@
                 <!-- Carousel wrapper -->
 
             </div>
-            <footer class="center-align m-b-30">All Rights Reserved by ALAG. Designed and Developed by Alefiyah
-                Sanawadwala. Vidhi Gupta. Aditi Agwan. Riddhi Hedaoo.</footer>
+            <footer class="page-footer light-blue darken-3"> 
+                <span class="right">©2023 All rights reserved by ALAG</span>
+                <!--<a class="White-text  right" href="#!">More Links</a>-->
+                <a href="#" class="btn indigo darken-1 tooltipped btn-floating" data-position="top" data-tooltip="Facebook"><i class="fab fa-facebook-f"></i></a> 
+                <a href="#" class="btn pink darken-2 tooltipped btn-floating " data-position="top" data-tooltip="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="btn green lighten-2 tooltipped btn-floating " data-position="top" data-tooltip="Whatsapp"><i class="fab fa-whatsapp"></i></a>
+                <a href="#" class="btn light-blue tooltipped btn-floating " data-position="top" data-tooltip="Twitter"><i class="fab fa-twitter"></i></a>
+            </footer>
         </div>
         <!-- ============================================================== -->
         <!-- Page wrapper scss in scafholding.scss -->
@@ -321,8 +319,7 @@
         <!-- ============================================================== -->
 
         <a href="#" data-target="right-slide-out"
-            class="sidenav-trigger right-side-toggle btn-floating btn-large waves-effect waves-light"
-            style="background-color: #e883ff;"><i class="material-icons">settings</i></a>
+            class="sidenav-trigger right-side-toggle btn-floating btn-large waves-effect waves-light light-blue darken-4"><i class="material-icons">settings</i></a>
         <aside class="right-sidebar">
             <!-- Right Sidebar -->
             <ul id="right-slide-out" class="sidenav right-sidenav p-t-10">

@@ -13194,7 +13194,7 @@ Padding margin property
         float: left;
     }
 
-    /* -------------css custom strat----------- */
+    /* -------------css custom start----------- */
     .testimonial_section {
       display: block;
       overflow: hidden;
@@ -13324,7 +13324,7 @@ Padding margin property
   }
 
   .testimonial_section .about_content .layer_content a:hover {
-      color: #880e4f;
+      color: #81d4fa;
   }
 
   .testimonial_section .testimonial_box {
@@ -13333,13 +13333,13 @@ Padding margin property
   }
 
   .testimonial_section .testimonial_box .testimonial_container {
-      background-color: #880e4f;
+      background-color: #81d4fa;
       margin-left: -170px !important;
       position: relative;
   }
 
   .testimonial_section .testimonial_box .testimonial_container .background_layer {
-      background-color: #880e4f;
+      background-color: #81d4fa;
       width: auto;
       margin-right: -200px;
       right: 0;
@@ -13395,7 +13395,7 @@ Padding margin property
       text-align: center;
       left: 46%;
       margin-top: 6px;
-      background-color: #880e4f;
+      background-color: #81d4fa;
       position: absolute;
   }
 
@@ -13444,7 +13444,7 @@ Padding margin property
       top: 165px;
       right: 42px;
       border-radius: 0;
-      background: #880e4f;
+      background: #ff1744;
       display: block;
       outline: 0;
       width: 34px;
@@ -13466,7 +13466,7 @@ Padding margin property
       right: 5px;
       border-radius: 0;
       display: block;
-      background: #880e4f;
+      background: #ff1744;
       outline: 0;
       width: 34px;
       text-align: center;
@@ -13559,5 +13559,16 @@ Padding margin property
       100% {
           transform: scale(1);
       }
+  }
+  .split
+  {
+ background: linear-gradient(
+   to top,
+   #03a9f4  0%,
+   #03a9f4  25%,
+   white 25%,
+   white 100%
+ );
+
   }
     /* -------------custom end---------------------- */
