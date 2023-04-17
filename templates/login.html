@@ -20,6 +20,10 @@
 </head>
 
 <body>
+     <!--Alert Box-->
+   {% for message in get_flashed_messages() %}
+     alert({{ message }})
+   {% endfor %}
     <div class="main-wrapper">
         <!-- ============================================================== -->
         <!-- Preloader - style you can find in spinners.css -->

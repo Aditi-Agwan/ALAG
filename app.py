@@ -91,16 +91,21 @@ def signup():
         cursor.execute('SELECT * FROM STUDENT WHERE EMAIL = %s', (email,))
         account = cursor.fetchone()
         if password == cpass:
+         password_pattern = "^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$"   
          # If account exists show error and validation checks
          if account:
              msg = 'Account already exists!'
          elif not re.match(r'[A-Za-z]+', user_name):
              msg = 'Username must contain only characters '
+         elif not re.match(password_pattern , password):
+             msg = 'Password should be strong'
          else:
              cur.execute("INSERT INTO STUDENT(name,email,gender,college,branch,year_of_study,password) VALUES(%s,%s,%s,%s,%s,%s,%s) ",(user_name,email,gender,college,branch,yos,password))
              mysql.connection.commit()
              cur.close()
              msg='Success'
+             flash(msg)
+             return render_template('login.html')
         else:
          msg = 'Passwords did not match'
         flash(msg) 
@@ -181,12 +186,17 @@ def book():
     else:          
       return redirect(url_for('login'))
     
+def cleanhtml(raw_html,CLEANR):
+  cleantext = re.sub(CLEANR, '', raw_html)
+  return cleantext    
 
 @app.route('/addpost',methods=['POST','GET'])
 def add_post():
     #fetch details from form
     postDetails = request.form
     post_data = postDetails['area']
+    CLEANR = re.compile('<.*?>|&([a-z0-9]+|#[0-9]{1,6}|#x[0-9a-f]{1,6});')
+    post_data = cleanhtml(post_data , CLEANR)
     post_type = postDetails['post_type']
     posted_by = session['username']
     posted_on=datetime.datetime.now()
